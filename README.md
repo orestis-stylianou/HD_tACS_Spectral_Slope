@@ -12,7 +12,7 @@ The code in this project is organized around a research workflow:
 6. Compare spectral slope before vs during stimulation, test significance, and correlate changes with CTT changes.
 7. Generate output figures for manuscript reporting.
 
-The project appears to be built around a dataset from a published neuroscience study:
+The project is built around a dataset from a published neuroscience study:
 
 Dataset: https://www.nature.com/articles/s41597-021-01046-y
 
