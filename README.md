@@ -1,6 +1,4 @@
-# tESm EEG, ECG
-
-This repository contains the analysis pipeline for a transcranial electrical stimulation (tES) study using EEG and ECG data. The workflow includes raw-data preprocessing, artifact cleaning, extraction of stimulation-related EEG segments, spectral slope estimation, CTT summary statistics, and plotting of figures for analysis and publication.
+# 30 Hz High-Definition Transcranial Alternating Current Stimulation at the Left Frontal Cortex Reduces the Spectral Slope of the EEG in the Contralateral Hemisphere
 
 ## Project overview
 
