@@ -8,7 +8,7 @@ The code in this project is organized around a research workflow:
 2. Preprocess EEG data using MNE Python tools, including resampling, filtering, re-referencing, ICA, ICLabel-based artifact removal, and current source density estimation.
 3. Save cleaned EEG segments into a structured folder hierarchy.
 4. Extract CTT (continuous task time / deviation) segments associated with stimulation conditions.
-5. Compute spectral slopes using the IRASA approach.
+5. Compute spectral slopes using the IRASA (Irregular-Resampling Auto-Spectral Analysis) function to separate the aperiodic component from the power spectrum.
 6. Compare spectral slope before vs during stimulation, test significance, and correlate changes with CTT changes.
 7. Generate output figures for manuscript reporting.
 
@@ -22,10 +22,19 @@ Dataset: https://www.nature.com/articles/s41597-021-01046-y
   Main EEG preprocessing pipeline. Reads raw data, performs artifact cleaning, saves cleaned `.fif` files, and exports preprocessing figures.
 
 - `spectral_slope_calculation.R`  
-  Computes spectral slopes from the cleaned EEG using IRASA and stores outputs by subject, stimulation type, and segment.
+  Computes spectral slopes from the cleaned EEG using `IRASA.R`  and stores outputs by subject, stimulation type, and segment.
+
+- `power_spectra_plots.R`  
+  Visualizes original and scale-free power spectra for statistically significant channels and stimulation types.
+
+- `spectral_slope_plots.R`  
+  Produces topographic maps and subject-level spectral slope comparisons for significant channels.
 
 - `ctt_grouping.R`  
   Aggregates CTT deviation values across subject and stimulation conditions and saves a grouped dataset.
+
+- `ctt_alterations_after_stimulation.R`  
+  Tests whether CTT changes after stimulation differ by condition and saves a PDF summary of the results.
 
 - `spectral_slope_comparisons.R`  
   Builds a long-form dataset of spectral slopes and performs paired comparisons before vs during stimulation with normality checking and correction for multiple testing.
@@ -57,10 +66,12 @@ Dataset: https://www.nature.com/articles/s41597-021-01046-y
 2. Ensure Python and package dependencies are installed.
 3. Run `preprocessing.R`.
 4. Run `spectral_slope_calculation.R`.
-5. Run `ctt_grouping.R`.
-6. Run `spectral_slope_comparisons.R`.
-7. Run `spectral_slope_ctt_change_correlations.R`.
-8. Run the relevant figure scripts as needed.
+5. Run `power_spectra_plots.R` and `spectral_slope_plots.R` to inspect IRASA-derived spectra and channel-level slope changes.
+6. Run `ctt_grouping.R`.
+7. Run `ctt_alterations_after_stimulation.R` to examine CTT changes after stimulation.
+8. Run `spectral_slope_comparisons.R`.
+9. Run `spectral_slope_ctt_change_correlations.R`.
+10. Run the relevant figure scripts as needed.
 
 - `Preprocessing Figures/` contains GIF and image summaries of EEG before and after cleaning.
 - `Clean EEG/` stores cleaned `.fif` files.
