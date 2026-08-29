@@ -73,12 +73,6 @@ Dataset: https://www.nature.com/articles/s41597-021-01046-y
 9. Run `spectral_slope_ctt_change_correlations.R`.
 10. Run the relevant figure scripts as needed.
 
-- `Preprocessing Figures/` contains GIF and image summaries of EEG before and after cleaning.
-- `Clean EEG/` stores cleaned `.fif` files.
-- `CTT Data/` stores task-related CTT segment files.
-- `Spectral Slope/` stores IRASA outputs and spectral slope results.
-- generated PDFs and PNGs hold the final results and publication-quality figures.
-
 ## Notes
 
 - The code uses Windows-specific commands in a few places (for example, deleting temporary directories with `shell(...)`), so cross-platform use may require modification.
